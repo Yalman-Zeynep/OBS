@@ -109,21 +109,21 @@ BEGIN
     BEGIN
         SET @average = @vize * 0.4 + @final * 0.6;
         IF @average >= 60
-            SET @status = 'Geçti';      --ortalama 60 uzeri ise gecti
+            SET @status = 'Gecti';      --ortalama 60 uzeri ise gecti
         ELSE
-            SET @status = 'Kaldý';      --ortalama 60 alti ise kaldi
+            SET @status = 'Kaldi';      --ortalama 60 alti ise kaldi
     END
     ELSE IF @but IS NOT NULL			--but notu mevcutsa
     BEGIN
         SET @average = @vize * 0.4 + @but * 0.6;  --ortalama hesaplanir
         IF @average >= 60
-            SET @status = 'Geçti';           --ortalama 60 uzeri ise gecti
+            SET @status = 'Gecti';           --ortalama 60 uzeri ise gecti
         ELSE
-            SET @status = 'Kaldý';		    --ortalama 60 alti ise kaldi
+            SET @status = 'Kaldi';		    --ortalama 60 alti ise kaldi
     END
     ELSE									--but ve final notu yoksa bute kaldi
     BEGIN
-        SET @status = 'Büte Kaldý';
+        SET @status = 'Bute Kaldi';
     END
 
     -- Durumu geçme durumu tablosuna ekle veya güncelle
